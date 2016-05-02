@@ -1,0 +1,19 @@
+﻿<Window x:Class="cBluetooth.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:cBluetooth"
+        mc:Ignorable="d"
+        Title="RobotControl" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="btnVooruit" Content="Vooruit" HorizontalAlignment="Left" Height="30" Margin="196,122,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="btnLinks" Content="Links" HorizontalAlignment="Left" Height="30" Margin="42,201,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="btnAchteruit" Content="Achteruit" HorizontalAlignment="Left" Height="30" Margin="196,201,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="btnRechts" Content="Rechts" HorizontalAlignment="Left" Height="30" Margin="356,201,0,0" VerticalAlignment="Top" Width="115"/>
+        <RadioButton x:Name="rbAuto" Content="Automatisch" HorizontalAlignment="Left" Height="17" Margin="10,10,0,0" VerticalAlignment="Top" Width="96"/>
+        <RadioButton x:Name="rbManueel" Content="Manueel" HorizontalAlignment="Left" Height="17" Margin="121,10,0,0" VerticalAlignment="Top" Width="96" IsChecked="True"/>
+        <ComboBox x:Name="cboCompoort" HorizontalAlignment="Left" Height="29" Margin="325,10,0,0" VerticalAlignment="Top" Width="146"/>
+
+    </Grid>
+</Window>
