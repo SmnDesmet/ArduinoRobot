@@ -37,6 +37,21 @@ namespace cBluetooth
             rbAuto.Click += RbAuto_Click;
             rbManueel.Click += RbManueel_Click;
         }
+        
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            string[] comPoorten = SerialPort.GetPortNames();
+            cboCompoort.Items.Clear();
+            foreach(string poort in comPoorten)
+            {
+                cboCompoort.Items.Add(poort);
+                
+            }
+            cboCompoort.Items.Insert(0, "Selecteer een poort");
+            cboCompoort.SelectedIndex = 0;
+            serialPort.BaudRate = 9600;
+            serialPort.PortName = "COM20"; 
+        }
 
         private void CboCompoort_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -97,7 +112,7 @@ namespace cBluetooth
 
         private void BtnVooruit_Click(object sender, RoutedEventArgs e)
         {
-            // throw new NotImplementedException();
+            
             serialPort.Open();
             if (serialPort.IsOpen)
             {
@@ -106,19 +121,5 @@ namespace cBluetooth
             serialPort.Close();
         }
 
-        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            string[] comPoorten = SerialPort.GetPortNames();
-            cboCompoort.Items.Clear();
-            foreach(string poort in comPoorten)
-            {
-                cboCompoort.Items.Add(poort);
-                
-            }
-                cboCompoort.Items.Insert(0, "Selecteer een poort");
-               cboCompoort.SelectedIndex = 0;
-            serialPort.BaudRate = 9600;
-            serialPort.PortName = "COM20"; 
-            }
     }
 }
